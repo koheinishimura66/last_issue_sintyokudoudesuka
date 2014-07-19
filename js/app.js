@@ -69,19 +69,34 @@ var table = {"チキンおろしだれ":[2.7,1.5,1.2,458,1.4],
 };
 
 
-//var T = table[document.forms.number_1];
 
 document.querySelector("#start").onclick = function() {
   var menu_1= document.getElementById("number_1");
-console.log(menu_1);
+      menu_2= document.getElementById("number_2");
+      menu_3= document.getElementById("number_3");
+      
+  console.log(menu_1);
+  console.log(menu_2);
+  console.log(menu_3);
 
-var T = table[menu_1.value];
-console.log(T);
+  var data_1 = table[menu_1.value]
+      data_2 = table[menu_2.value]
+      data_3 = table[menu_3.value]
+
+  console.log(data_1)
+  console.log(data_2)
+  console.log(data_3)
+
+  var t = [data_1[0] + data_2[0] + data_3[0], data_1[1] + data_2[1] + data_3[1], data_1[2] + data_2[2] + data_3[2],
+   data_1[3] + data_2[3] + data_3[3], data_1[4] + data_2[4] + data_3[4]]
+  console.log(t)
+
+  var T = [t[0]/2*5, t[1]/1*5, t[2]/6*5]
 
   var rc = new html5jp.graph.radar("sample");
   if( ! rc ) { return; }
   var items = [
-    ["前回のあなたの値", 5, 3, 5],
+    ["目標値", 5, 5, 5],
     ["あなたの値", T[0], T[1],T[2]]
     ];
   var params = {
